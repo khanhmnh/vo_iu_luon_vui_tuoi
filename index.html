@@ -143,6 +143,8 @@ for(let i=0;i<6;i++){ const x=185+i*46,h=R(130,220),b=R(-25,25);
 for(let i=0;i<30;i++){ const a=R(-88,88),x=R(180,420),y=R(505,598);
  s+=`<g class="sw" style="--o:${x}px ${y}px;animation-duration:${R(4,7)}s;animation-delay:-${R(0,5)}s">${leaf(x,y,a,R(.9,1.5))}</g>`; }
 art.innerHTML=s;
+function fit(){const L=innerWidth/innerHeight>1;art.setAttribute("viewBox",L?"110 220 380 380":"0 0 600 600");art.setAttribute("preserveAspectRatio",L?"xMidYMax meet":"xMidYMax slice");}
+fit();addEventListener("resize",fit);
 
 /* ---- Hoa trên phong thư ---- */
 $("#envFl").innerHTML=[[150,80,150,1.2,0,.82],[78,115,104,1,-14,.8],[222,108,196,1.05,13,.8]]
